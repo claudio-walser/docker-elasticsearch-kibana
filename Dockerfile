@@ -24,6 +24,6 @@ RUN wget -q -O - https://artifacts.elastic.co/downloads/elasticsearch/elasticsea
 
 COPY start.sh start.sh
 
-CMD sh start.sh
+CMD sh echo 'gut'
 
 EXPOSE 9200 5601
