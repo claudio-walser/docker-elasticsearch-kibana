@@ -22,8 +22,8 @@ RUN wget -q -O - https://artifacts.elastic.co/downloads/elasticsearch/elasticsea
  && ln -s $(which node) kibana/node/bin/node \
  && ln -s $(which npm) kibana/node/bin/npm
 
-COPY start.sh start.sh
+COPY start.sh /home/elasticsearch/start.sh
 
-CMD start.sh
+CMD /home/elasticsearch/start.sh
 
 EXPOSE 9200 5601
