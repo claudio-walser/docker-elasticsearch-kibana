@@ -24,6 +24,6 @@ RUN wget -q -O - https://artifacts.elastic.co/downloads/elasticsearch/elasticsea
 
 COPY start.sh start.sh
 
-CMD sh echo 'gut'
+CMD sh elasticsearch/bin/elasticsearch -E http.host=0.0.0.0 --quiet & kibana/bin/kibana --host 0.0.0.0 -Q
 
 EXPOSE 9200 5601
