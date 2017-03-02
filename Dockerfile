@@ -22,6 +22,8 @@ RUN wget -q -O - https://artifacts.elastic.co/downloads/elasticsearch/elasticsea
  && ln -s $(which node) kibana/node/bin/node \
  && ln -s $(which npm) kibana/node/bin/npm
 
-CMD sh echo 'server.basePath: \"/${KIBANA_BASE_PATH}\"' >> /home/elasticsearch/kibana/config/kibana.yml && elasticsearch/bin/elasticsearch -E http.host=0.0.0.0 --quiet & kibana/bin/kibana --host 0.0.0.0 -Q
+COPY start.sh start.sh
+
+CMD start.sh
 
 EXPOSE 9200 5601
